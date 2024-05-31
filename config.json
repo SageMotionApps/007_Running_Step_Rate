@@ -1,0 +1,10 @@
+{
+  "trial_name": "stepRate_trial_0",
+  "feedback_enabled": true,
+  "last_connect_feedback": [],
+  "last_connect_sensors": [],
+  "stepRate_high": 180,
+  "stepRate_low": 0,
+  "save_mode": "xlsx",
+  "local_time": 0
+}

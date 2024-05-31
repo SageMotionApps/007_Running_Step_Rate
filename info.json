@@ -1,0 +1,106 @@
+{
+  "user_guide_file": "Running Step Rate App Guide.pdf",
+  "app_name": "Running Step Rate",
+  "app_description": "Measure and train step rate (step/min) during running <br><br>Nodes Required: 3 <br> -Sensing (1): shank <br> -Feedback (2): max (upper step rate limit), min (lower step rate limit) <br><br><br>App for training step rate, range from 30~300 steps/min.",
+  "app_id": "007",
+  "app_version": "1_2",
+  "version_id": "00712",
+  "validated_version_range": [
+    "3.10.0",
+    "4.1.0"
+  ],
+  "parameters_setting": [
+    [
+      "Feedback Settings",
+      {
+        "source": "feedback_enabled",
+        "title": "Feedback On",
+        "type": "bool",
+        "description": "Enable/Disable feedback"
+      },
+      {
+        "source": "stepRate_high",
+        "title": "Max Threshold Step Rate",
+        "type": "float",
+        "validation": [
+          0,
+          300
+        ],
+        "description": "Feedback would be given when the step rate(/max) is higher than the threshold."
+      },
+      {
+        "source": "stepRate_low",
+        "title": "Min Threshold Step Rate",
+        "type": "float",
+        "validation": [
+          0,
+          300
+        ],
+        "description": "Feedback would be given when the step rate(/min) is lower than the threshold."
+      }
+    ],
+    [
+      "Save Options",
+      {
+        "source": "save_mode",
+        "title": "Save Mode",
+        "type": "combo",
+        "validation": [
+          "csv",
+          "h5",
+          "xlsx"
+        ],
+        "description": "Save file in specified format"
+      }
+    ]
+  ],
+  "user_fields": [
+    {
+      "name": "time",
+      "data_type": "float",
+      "size": 1
+    },
+    {
+      "name": "stepRate",
+      "data_type": "int",
+      "size": 1
+    },
+    {
+      "name": "stepRate_low",
+      "data_type": "float",
+      "size": 1
+    },
+    {
+      "name": "stepRate_high",
+      "data_type": "float",
+      "size": 1
+    },
+    {
+      "name": "low_feedback_state",
+      "data_type": "int",
+      "size": 1
+    },
+    {
+      "name": "high_feedback_state",
+      "data_type": "int",
+      "size": 1
+    },
+    {
+      "name": "user_defined_status",
+      "data_type": "str",
+      "size": 1
+    }
+  ],
+  "sensors": [
+    "Shank"
+  ],
+  "feedback": [
+    "Min",
+    "Max"
+  ],
+  "pulse_length": 1,
+  "datarate": 100,
+  "windowLength": 2,
+  "max_steprate": 300,
+  "min_steprate": 30
+}
